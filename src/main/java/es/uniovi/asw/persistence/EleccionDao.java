@@ -6,7 +6,10 @@ import es.uniovi.asw.model.Eleccion;
 
 public interface EleccionDao {
 	
-	public Eleccion getEleccion(Date fecha);
+	public Eleccion getEleccion(String nombre, Date fecha);
 	
+	public void iniciarRecuento();
+	
+	public void terminarRecuento();
 	
 }

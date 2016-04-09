@@ -1,28 +1,41 @@
 package es.uniovi.asw.model;
 
-import java.util.List;
+import javax.persistence.ManyToOne;
 
-public class Colegio {
+public class ColegioElectoral {
+	
 	private String nombre;
 	private String poblacion;
-	private List<Voto> votos;
+	
+	@ManyToOne
+	private Circunscripcion circunscripcion;
+
+	ColegioElectoral(){}
 	
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getPoblacion() {
 		return poblacion;
 	}
+
 	public void setPoblacion(String poblacion) {
 		this.poblacion = poblacion;
 	}
-	public List<Voto> getVotos() {
-		return votos;
+
+	public Circunscripcion getCircunscripcion() {
+		return circunscripcion;
 	}
-	public void setVotos(List<Voto> votos) {
-		this.votos = votos;
+
+	public void setCircunscripcion(Circunscripcion circunscripcion) {
+		this.circunscripcion = circunscripcion;
 	}
+	
+	
+	
 }

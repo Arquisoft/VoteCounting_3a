@@ -8,9 +8,21 @@ import es.uniovi.asw.persistence.EleccionDao;
 public class EleccionDaoImpl implements EleccionDao{
 
 	@Override
-	public Eleccion getEleccion(Date fecha) {
+	public Eleccion getEleccion(String nombre, Date fecha) {
 		// TODO Auto-generated method stub
-		return null;
+		return new Eleccion();
+	}
+
+	@Override
+	public void iniciarRecuento() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void terminarRecuento() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
