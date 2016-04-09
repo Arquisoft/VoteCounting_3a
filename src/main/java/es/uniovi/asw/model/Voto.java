@@ -1,26 +1,27 @@
 package es.uniovi.asw.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import es.uniovi.asw.model.types.Votokey;
 
-@Table(name="Voto")
-@IdClass (Votokey.class)
+@Table(name="VOTO")
 @Entity
 public class Voto {
 	
-	@Id @ManyToOne
+	@Id @GeneratedValue
+	private Long id;
+	
+	@ManyToOne
 	private ColegioElectoral colegio;
 	
-	@Id @ManyToOne
-	private Candidatura candidatura;
-
-	Voto(){}
+	@ManyToOne
+	private Candidatura opcion;
 	
+	Voto() {}
+
 	public ColegioElectoral getColegio() {
 		return colegio;
 	}
@@ -30,12 +31,49 @@ public class Voto {
 	}
 
 	public Candidatura getOpcion() {
-		return candidatura;
+		return opcion;
 	}
 
-	public void setCandidatura(Candidatura candidatura) {
-		this.candidatura = candidatura;
+	public void setOpcion(Candidatura opcion) {
+		this.opcion = opcion;
 	}
 	
 	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((colegio == null) ? 0 : colegio.hashCode());
+		result = prime * result + ((opcion == null) ? 0 : opcion.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Voto other = (Voto) obj;
+		if (colegio == null) {
+			if (other.colegio != null)
+				return false;
+		} else if (!colegio.equals(other.colegio))
+			return false;
+		if (opcion == null) {
+			if (other.opcion != null)
+				return false;
+		} else if (!opcion.equals(other.opcion))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Voto [id=" + id + ", colegio=" + colegio + ", opcion=" + opcion + "]";
+	}
+
 }
