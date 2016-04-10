@@ -2,10 +2,12 @@ package es.uniovi.asw.persistence.impl.repository;
 
 import java.util.List;
 
+import org.springframework.data.repository.CrudRepository;
+
 import es.uniovi.asw.model.Circunscripcion;
 import es.uniovi.asw.model.ColegioElectoral;
 
-public interface PollingStationRepository {
+public interface PollingStationRepository extends CrudRepository<ColegioElectoral, Long>{
 
 	List<ColegioElectoral> findAll();
 	
