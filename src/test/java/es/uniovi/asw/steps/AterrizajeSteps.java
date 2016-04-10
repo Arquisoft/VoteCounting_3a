@@ -1,6 +1,6 @@
 package es.uniovi.asw.steps;
 
-import cucumber.api.PendingException;
+//import cucumber.api.PendingException;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
