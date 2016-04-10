@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-package es.uniovi.asw.persistence.impl.repository;
-
-import java.util.List;
-
-import es.uniovi.asw.model.Circunscripcion;
-
-public interface CircunscripcionRepository {
-
-	List<Circunscripcion> findAll();
-	
-	Circunscripcion findById(Long id);
-	
-}
-=======
 package es.uniovi.asw.persistence.impl.repository;
 
 import java.util.List;
@@ -28,4 +13,3 @@ public interface CircunscripcionRepository extends CrudRepository<Circunscripcio
 	Circunscripcion findById(Long id);
 	
 }
->>>>>>> master
