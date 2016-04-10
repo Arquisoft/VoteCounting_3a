@@ -2,9 +2,11 @@ package es.uniovi.asw.persistence.impl.repository;
 
 import java.util.List;
 
+import org.springframework.data.repository.CrudRepository;
+
 import es.uniovi.asw.model.Circunscripcion;
 
-public interface CircunscripcionRepository {
+public interface CircunscripcionRepository extends CrudRepository<Circunscripcion, Long>{
 
 	List<Circunscripcion> findAll();
 	
