@@ -25,11 +25,11 @@ public class Main {
 
   private static final Logger LOG = LoggerFactory.getLogger(Main.class);
 
-  @RequestMapping("/")
+  /*@RequestMapping("/")
   public ModelAndView landing(Model model) {
     LOG.info("Landing page access");
     return new ModelAndView("landing");
-  }
+  }*/
   
   @RequestMapping(
 			value = "/iniciarRecuento",
