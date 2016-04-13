@@ -14,10 +14,67 @@
     <![endif]-->
 </head>
 <body>
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Elecciones - Sistema de
+					resultados</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/">Inicio</a></li>
+					<li><a href="/elecciones">Lista de elecciones</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/administrar">Administrar</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</nav>
+
 	<div id="main">
+
+		<div id="index" class="page container active">
+			<div class="jumbotron">
+				<h1>Resultados de elecciones</h1>
+				<p class="lead">Esto es un prototipo de ejmplo de aplicación web
+					que muestra los resultados de diferentes elecciones.</p>
+				<p>
+					<a class="btn btn-lg btn-success" href="/elecciones" role="button">Consultar
+						lista de elecciones</a>
+				</p>
+			</div>
+		</div>
+
+		<div id="help" class="page container">
+			<ul>
+				<li>Test</li>
+			</ul>
+		</div>
+
+		<div id="notfound" class="page container">
+			<h1>Página no encontrada.</h1>
+		</div>
+
 	</div>
 
-	<div id="loading"><h1>Cargando...</h1></div>
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">Amir Housein Tofigh Halati, Carlos Lopez de
+				Juan, David González García, Raúl Barba Tamargo</p>
+		</div>
+	</footer>
+
+	<!-- <div id="loading"><h1>Cargando...</h1></div> -->
 	<script src="/js/jquery-2.2.3.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/page.min.js"></script>
