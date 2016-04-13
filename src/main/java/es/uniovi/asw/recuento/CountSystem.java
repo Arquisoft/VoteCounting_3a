@@ -1,4 +1,4 @@
-package recuento;
+package es.uniovi.asw.recuento;
 
 import java.util.HashMap;
 import java.util.List;
