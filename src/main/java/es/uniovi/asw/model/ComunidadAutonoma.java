@@ -7,9 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
-@Table(name="COMUNIDADAUTONOMA")
 @Entity
 public class ComunidadAutonoma {
 	
