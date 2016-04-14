@@ -11,7 +11,7 @@ Vote Counting
 * Amir Housein Tofigh Halati
 * Carlos Lopez de Juan
 * David González García
-* Raúl Barba Tamargo
+* Raul Barba Tamargo
 * Jose Labra
 
 
