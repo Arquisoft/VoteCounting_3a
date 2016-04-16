@@ -1,4 +1,4 @@
-package es.uniovi.asw.controller;
+package es.uniovi.asw.publicacion;
 
 import javax.validation.Valid;
 
@@ -21,9 +21,9 @@ import es.uniovi.asw.model.types.UserPassInitStop;
 
 
 @Controller
-public class Main {
+public class AdminRestController {
 
-  private static final Logger LOG = LoggerFactory.getLogger(Main.class);
+  private static final Logger LOG = LoggerFactory.getLogger(AdminRestController.class);
 
   /*@RequestMapping("/")
   public ModelAndView landing(Model model) {
