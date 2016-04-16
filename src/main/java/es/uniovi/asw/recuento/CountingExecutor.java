@@ -1,15 +1,15 @@
 package es.uniovi.asw.recuento;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class CountingExecutor {
 	
 	private final static long TIME = 5 * 60 * 1000;
 
-	private static Map<CountSystem, Timer> timers = new HashMap<>();
+	private static Map<CountSystem, Timer> timers = new ConcurrentHashMap<>();
 
 	public static void register(CountSystem countSystem) {
 		if (!timers.containsKey(countSystem)) {
