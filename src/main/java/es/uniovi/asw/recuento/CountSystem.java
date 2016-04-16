@@ -2,6 +2,7 @@ package es.uniovi.asw.recuento;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public interface CountSystem {
 
@@ -14,5 +15,13 @@ public interface CountSystem {
 	public String getName();
 	
 	public List<String> GetOptions();
+	
+	public void calcular();
+	
+	public Map<String, Long> getVotos();
+
+	public Map<String, Map<String, Long>> getColegios();
+
+	public Map<String, Map<String, Long>> getComunidades();
 	
 }
