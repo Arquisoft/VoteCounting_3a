@@ -7,6 +7,7 @@ $(document).ready(function() {
 	// Rutas
 	page('/', index);
 	page('/help', help);
+	page('/administrar', administrar);
 	page('/elecciones', list);
 	page('/elecciones/:eleccion', eleccion);
 	page('*', notfound);
@@ -29,6 +30,10 @@ var index = function () {
 
 var help = function () {
 	navTo("/help", "help");
+}
+
+var administrar = function () {
+	navTo("/administrar", "administrar");
 }
 
 var list = function () {
