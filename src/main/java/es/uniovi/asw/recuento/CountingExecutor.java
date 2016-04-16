@@ -1,0 +1,41 @@
+package es.uniovi.asw.recuento;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class CountingExecutor {
+	
+	private final static long TIME = 5 * 60 * 1000;
+
+	private static Map<CountSystem, Timer> timers = new HashMap<>();
+
+	public static void register(CountSystem countSystem) {
+		if (!timers.containsKey(countSystem)) {
+			Timer timer = new Timer();
+			timer.schedule(new CountTask(countSystem), 1, TIME);
+		}
+	}
+
+	public static void unregister(CountSystem countSystem) {
+		Timer timer = timers.get(countSystem);
+		
+		if (timer != null) {
+			timer.cancel();
+		}
+	}
+
+	private static class CountTask extends TimerTask {
+		private CountSystem countSystem;
+
+		public CountTask(CountSystem countSystem) {
+			this.countSystem = countSystem;
+		}
+
+		public void run() {
+			// countSystem.calcular();
+		}
+	}
+
+}
