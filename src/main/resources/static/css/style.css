@@ -18,12 +18,14 @@ body {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	background-color: #f5f5f5;
+	background-color: #f3f3f3;
+	border-top: 1px solid #E7E7E7;
 }
 
 .footer .container .text-muted {
 	margin: 15px 0;
 	text-align: center;
+	text-shadow: 1px 1px 0 #FFF;
 }
 
 #main .page {
@@ -34,7 +36,7 @@ body {
 	display: block;
 }
 
-.form-signin {
+.center-form {
 	max-width: 330px;
 	padding: 15px;
 	margin: 0 auto;
