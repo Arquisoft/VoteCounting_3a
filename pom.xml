@@ -13,6 +13,25 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.3.2.RELEASE</version>
 	</parent>
+	
+	<developers>
+		<developer>
+			<name>David González García</name>
+			<email>uo212486@uniovi.es</email>
+		</developer>
+		<developer>
+			<name>Raul Barba Tamargo</name>
+			<email>uo209692@uniovi.es</email>
+		</developer>
+		<developer>
+			<name>Amir Housein Tofigh Halati</name>
+			<email>uo240753@uniovi.es</email>
+		</developer>
+		<developer>
+			<name>Carlos</name>
+			<email>uozzzzzz@uniovi.es</email>
+		</developer>
+	</developers>
 
 	<dependencies>
 		<dependency>
