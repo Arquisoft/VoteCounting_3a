@@ -2,9 +2,9 @@ package es.uniovi.asw.persistence;
 
 import org.springframework.data.repository.CrudRepository;
 
-import es.uniovi.asw.model.Candidatura;
+import es.uniovi.asw.model.ColegioElectoral;
 
-public interface ColegioRepository extends CrudRepository<Candidatura, Long>{
-	Candidatura findById(Long id);
+public interface ColegioRepository extends CrudRepository<ColegioElectoral, Long>{
+	ColegioElectoral findById(Long id);
 
 }
