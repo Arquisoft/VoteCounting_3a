@@ -13,7 +13,7 @@ notifications:
       - uo212486@uniovi.es
       - uo209692@uniovi.es
       - uo240753@uniovi.es
-      - uozzzzzz@uniovi.es
+      - uo223663@uniovi.es
     on_success: change
     on_failure: always
   webhooks:
