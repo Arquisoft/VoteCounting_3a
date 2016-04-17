@@ -1,5 +1,7 @@
 # Vote Counting & Publishing system
 
+[![Join the chat at https://gitter.im/Arquisoft/VoteCounting_3a](https://badges.gitter.im/Arquisoft/VoteCounting_3a.svg)](https://gitter.im/Arquisoft/VoteCounting_3a?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Chat
 
 [![Join the chat at https://gitter.im/Arquisoft/VoteCounting_3a](https://badges.gitter.im/Arquisoft/VoteCounting_3a.svg)](https://gitter.im/Arquisoft/VoteCounting_3a?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
