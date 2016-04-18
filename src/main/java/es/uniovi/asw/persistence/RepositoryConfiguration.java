@@ -1,5 +1,8 @@
 package es.uniovi.asw.persistence;
 
+import java.sql.Time;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.orm.jpa.EntityScan;
@@ -14,14 +17,14 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class RepositoryConfiguration {
 	
-	/*public static CandidaturaRepository candidaturaRep;
+	public static CandidaturaRepository candidaturaRep;
 	public static CircunscripcionRepository circunscripcionRep;
 	public static ColegioRepository colegioRep;
 	public static ComunidadRepository comunidadRep;
 	public static EleccionRepository eleccionRep;
 	public static VoterRepository voterRep;
 	public static VotoRepository votoRep;
-	public static VotoConfirmadoRepository votoConfirmadoRep;*/
+	public static VotoConfirmadoRepository votoConfirmadoRep;
 	
 	@Autowired
 	public void setCandidaturaRep(CandidaturaRepository candidaturaRep){
@@ -33,8 +36,10 @@ public class RepositoryConfiguration {
 		Repository.circunscripcionRep = circunscripcionRep;
 		
 		if (circunscripcionRep.count() == 0) {
-			// TODO Añadir datos de ejemplo.
-			// circunscripcionRep.save(new ...)
+			circunscripcionRep.save(new Circunscripcion("Gijon", new ComunidadAutonoma("Asturias")));
+			circunscripcionRep.save(new Circunscripcion("Oviedo", new ComunidadAutonoma("Asturias")));
+			circunscripcionRep.save(new Circunscripcion("Gijon", new ComunidadAutonoma("Asturias")));
+			circunscripcionRep.save(new Circunscripcion("Gijon", new ComunidadAutonoma("Asturias")));
 		}
 	}
 	
@@ -51,13 +56,21 @@ public class RepositoryConfiguration {
 	@Autowired
 	public void setEleccionRep(EleccionRepository eleccionRep){
 		Repository.eleccionRep = eleccionRep;
+		if (eleccionRep.count() == 0) {
+			EleccionRepository.save(new Eleccion("EleccionASW", new Date(), 
+					new Date("01/01/2017"), new Time(System.currentTimeMillis()), 
+					new Time(System.currentTimeMillis()+100000)));
+		}
 	}
 	
 	@Autowired
 	public void setVoterRep(VoterRepository voterRep){
 		Repository.voterRep = voterRep;
 		if (voterRep.count() == 0) {
-			// TODO Añadir datos de ejemplo.
+			VoterRepository.save(new  Voter("Carlos", "email1@uniovi.es", "pass1", "7895176D"));
+			VoterRepository.save(new  Voter("Raul", "email2@uniovi.es", "pass2", "98751487D"));
+			VoterRepository.save(new  Voter("Amir", "email3@uniovi.es", "pass3", "1234567B"));
+			VoterRepository.save(new  Voter("David", "email4@uniovi.es", "pass4", "8747414D"));
 		}
 	}
 	
