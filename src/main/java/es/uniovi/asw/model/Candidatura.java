@@ -26,6 +26,10 @@ public class Candidatura {
 		return id;
 	}
 
+	public Candidatura(String nombre, Eleccion e){
+		Asociacion.EleccionOpcion.link(e, this);
+	}
+	
 	public Candidatura() {}
 	
 	public String getNombre() {

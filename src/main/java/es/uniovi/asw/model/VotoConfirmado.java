@@ -8,6 +8,7 @@ import javax.persistence.ManyToOne;
 
 import es.uniovi.asw.model.types.VotoConfirmadokey;
 
+
 @IdClass(VotoConfirmadokey.class)
 @Entity
 public class VotoConfirmado {
@@ -20,6 +21,11 @@ public class VotoConfirmado {
 	private boolean haVotado;
 	
 	VotoConfirmado() {}
+	
+	public VotoConfirmado(Voter voter, Eleccion eleccion){
+		Asociacion.EleccionVotoConfirmado.link(eleccion, this);
+		Asociacion.VotanteVotoConfirmado.link(voter, this);
+	}
 	
 	public Voter getVotante() {
 		return votante;

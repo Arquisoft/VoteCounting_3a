@@ -23,6 +23,15 @@ public class Circunscripcion {
 	@OneToMany(mappedBy = "circunscripcion")
 	private Set<ColegioElectoral> colegios = new HashSet<>();
 	
+	public Circunscripcion(ComunidadAutonoma comunidad){
+		Asociacion.ComunidadCircunscripcion.link(comunidad, this);
+	}
+	
+	public Circunscripcion(String nombre, ComunidadAutonoma comunidad){
+		this.nombre = nombre;
+		Asociacion.ComunidadCircunscripcion.link(comunidad, this);
+	}
+	
 	Circunscripcion() {}
 	
 	public ComunidadAutonoma getComunidad() {
