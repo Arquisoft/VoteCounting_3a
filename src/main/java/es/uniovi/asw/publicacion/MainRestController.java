@@ -27,7 +27,7 @@ public class MainRestController {
 			array.add(eleccion);
 		}
 		
-		// test
+		// Temporal hasta que aya datos
 		Eleccion e1 = new Eleccion();
 		e1.setNombre("Elecciones Generales España 2016");
 
@@ -50,10 +50,19 @@ public class MainRestController {
 			method = RequestMethod.GET,
 			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
 			consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public ResponseEntity<String> GetResultsOf(@PathVariable("id") String id) throws Exception {
+	public ResponseEntity<?> GetResultsOf(@PathVariable("id") long id) throws Exception {
 
+		Eleccion eleccion = Repository.eleccionRep.findById(id);
+		
+		if (eleccion == null) {
+			//new ResponseEntity<String>("{}", HttpStatus.NOT_FOUND);
+			
+			// temporal
+			eleccion = new Eleccion();
+			
+		}
 	
-		return  new ResponseEntity<String>("{}", HttpStatus.OK);
+		return  new ResponseEntity<Eleccion>(eleccion, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/test",

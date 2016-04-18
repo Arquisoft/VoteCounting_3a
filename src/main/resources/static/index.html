@@ -55,7 +55,10 @@
 			<div id="listaElecciones"></div>
 		</div>
 
-		<div id="eleccion" class="page container"></div>
+		<div id="eleccion" class="page container">
+			<h1 class="page-header">Resultados elecciones</h1>
+			<svg id="ChartResultadosEleccion" width="1000" height="500"></svg>
+		</div>
 
 		<div id="administrar" class="page container">
 			<h1 class="page-header">Administrar recuento de elecciones</h1>
@@ -101,7 +104,7 @@
 	<script id="ListTpl" type="text/x-dot-template">
 		<div class="list-group">
 		{{~it :value:index}}
-			<a href="/eleccion/{{=value.id}}" class="list-group-item">{{=value.nombre}}</a>
+			<a href="/elecciones/{{=value.id}}" class="list-group-item">{{=value.nombre}}</a>
 		{{~}}
 		</div>
 	</script>

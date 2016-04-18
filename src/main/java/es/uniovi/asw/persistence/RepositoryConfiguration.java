@@ -34,6 +34,7 @@ public class RepositoryConfiguration {
 		
 		if (circunscripcionRep.count() == 0) {
 			// TODO Añadir datos de ejemplo.
+			// circunscripcionRep.save(new ...)
 		}
 	}
 	
