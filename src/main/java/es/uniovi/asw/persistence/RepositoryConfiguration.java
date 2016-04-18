@@ -14,14 +14,14 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class RepositoryConfiguration {
 	
-	public static CandidaturaRepository candidaturaRep;
+	/*public static CandidaturaRepository candidaturaRep;
 	public static CircunscripcionRepository circunscripcionRep;
 	public static ColegioRepository colegioRep;
 	public static ComunidadRepository comunidadRep;
 	public static EleccionRepository eleccionRep;
 	public static VoterRepository voterRep;
 	public static VotoRepository votoRep;
-	public static VotoConfirmadoRepository votoConfirmadoRep;
+	public static VotoConfirmadoRepository votoConfirmadoRep;*/
 	
 	@Autowired
 	public void setCandidaturaRep(CandidaturaRepository candidaturaRep){
@@ -31,6 +31,10 @@ public class RepositoryConfiguration {
 	@Autowired
 	public void setCircunscripcionRep(CircunscripcionRepository circunscripcionRep){
 		Repository.circunscripcionRep = circunscripcionRep;
+		
+		if (circunscripcionRep.count() == 0) {
+			// TODO Añadir datos de ejemplo.
+		}
 	}
 	
 	@Autowired
@@ -51,6 +55,9 @@ public class RepositoryConfiguration {
 	@Autowired
 	public void setVoterRep(VoterRepository voterRep){
 		Repository.voterRep = voterRep;
+		if (voterRep.count() == 0) {
+			// TODO Añadir datos de ejemplo.
+		}
 	}
 	
 	@Autowired
