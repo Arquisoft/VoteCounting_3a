@@ -15,7 +15,7 @@ notifications:
       - uo240753@uniovi.es
       - uo223663@uniovi.es
     on_success: change
-    on_failure: always
+    on_failure: never
   webhooks:
     urls:
       - https://webhooks.gitter.im/e/53aa0b3b7ecc971e5039
