@@ -28,6 +28,17 @@ public class Voter {
 	
 	public Voter(){}
 	
+	public Voter(ColegioElectoral colegio){
+		Asociacion.ColegioVotante.link(colegio, this);
+	}
+	
+	public Voter(String nombre, String email, String password, String nif) {
+		this.nombre = nombre;
+		this.email = email;
+		this.password = password;
+		this.nif = nif;
+	}
+	
 	public String getEmail() {
 		return email;
 	}

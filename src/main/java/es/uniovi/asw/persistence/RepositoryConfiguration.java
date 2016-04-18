@@ -22,10 +22,19 @@ public class RepositoryConfiguration {
 	public static VoterRepository voterRep;
 	public static VotoRepository votoRep;
 	public static VotoConfirmadoRepository votoConfirmadoRep;*/
+	ComunidadAutonoma ca = new ComunidadAutonoma("Asturias");
+	Eleccion e = new Eleccion("EleccionASW", new Date(), 
+			new Date("01/01/2017"), new Time(System.currentTimeMillis()), 
+			new Time(System.currentTimeMillis()+100000));
 	
 	@Autowired
 	public void setCandidaturaRep(CandidaturaRepository candidaturaRep){
 		Repository.candidaturaRep = candidaturaRep;
+		if(candidaturaRep.count() == 0){
+			candidaturaRep.save(new Candidatura("PP","Partido Popular","ti tiri tiririririi", e ));
+			candidaturaRep.save(new Candidatura("PSOE","Partido Socialista","zz", e ));
+			candidaturaRep.save(new Candidatura("Podemos","Partido de Podemos","Presidente con coleta", e ));
+		}
 	}
 	
 	@Autowired
@@ -33,8 +42,10 @@ public class RepositoryConfiguration {
 		Repository.circunscripcionRep = circunscripcionRep;
 		
 		if (circunscripcionRep.count() == 0) {
-			// TODO Añadir datos de ejemplo.
-			// circunscripcionRep.save(new ...)
+			circunscripcionRep.save(new Circunscripcion("Gijon", ca));
+			circunscripcionRep.save(new Circunscripcion("Oviedo", ca));
+			circunscripcionRep.save(new Circunscripcion("Aviles", ca));
+			circunscripcionRep.save(new Circunscripcion("Mieres", ca));
 		}
 	}
 	
@@ -46,18 +57,27 @@ public class RepositoryConfiguration {
 	@Autowired
 	public void setComunidadRep(ComunidadRepository comunidadRep){
 		Repository.comunidadRep = comunidadRep;
+		if (comunidadRep.count() == 0) {
+			ComunidadRepository.save(ca);
+		}
 	}
 	
 	@Autowired
 	public void setEleccionRep(EleccionRepository eleccionRep){
 		Repository.eleccionRep = eleccionRep;
+		if (eleccionRep.count() == 0) {
+			EleccionRepository.save(e);
+		}
 	}
 	
 	@Autowired
 	public void setVoterRep(VoterRepository voterRep){
 		Repository.voterRep = voterRep;
 		if (voterRep.count() == 0) {
-			// TODO Añadir datos de ejemplo.
+			VoterRepository.save(new  Voter("Carlos", "email1@uniovi.es", "pass1", "7895176D"));
+			VoterRepository.save(new  Voter("Raul", "email2@uniovi.es", "pass2", "98751487D"));
+			VoterRepository.save(new  Voter("Amir", "email3@uniovi.es", "pass3", "1234567B"));
+			VoterRepository.save(new  Voter("David", "email4@uniovi.es", "pass4", "8747414D"));
 		}
 	}
 	

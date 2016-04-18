@@ -19,6 +19,14 @@ public class Voto {
 	
 	Voto() {}
 
+	public Voto(ColegioElectoral colegio){
+		Asociacion.ColegioVoto.link(colegio, this);
+	}
+	
+	public Voto(Candidatura opcion){
+		Asociacion.VotoOpcion.link(this, opcion);
+	}
+	
 	public ColegioElectoral getColegio() {
 		return colegio;
 	}
