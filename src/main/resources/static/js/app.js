@@ -37,14 +37,15 @@ var administrar = function () {
 }
 
 var list = function () {
-	navTo("/elecciones", "list");
+	navTo("/elecciones", "elecciones");
 	
 	$.ajax({
         url: "/elecciones"
     }).then(function(data) {
     	console.log(data)
-    	var listado = doT.template(document.getElementById('ListTpl').text);
-		document.getElementById('listaElecciones').innerHTML = listado(data);
+    	var listadoT = doT.template(document.getElementById('ListTpl').text);
+    	console.log(listadoT, listadoT(data));
+		document.getElementById('listaElecciones').innerHTML = listadoT(data);
     });
 }
 
@@ -55,31 +56,6 @@ var eleccion = function () {
 var notfound = function () {
 	navTo("/notFound", "notFound");
 }
-
-
-			submitActionFactory({
-				'el' : "#voters-info form",
-				'url' : "/user",
-				'done' : function(response, textStatus, jqXHR) {
-					addAlert("Hola " + response.name
-							+ ", tu lugar de votación es <b>"
-							+ response.pollingStationCode + "</b>", 'success');
-				},
-				'error404' : function() {
-					addAlert("No esta en la base de datos");
-				}
-			});
-
-			submitActionFactory({
-				'el' : "#voters-passwd form",
-				'url' : "/ChangePassword",
-				'done' : function(response, textStatus, jqXHR) {
-					addAlert("Tu contraseña se actualizo correctamente", 'success');
-				},
-				'error404' : function() {
-					addAlert("No permitido.");
-				}
-			});
 
 
 var submitActionFactory = (function() {

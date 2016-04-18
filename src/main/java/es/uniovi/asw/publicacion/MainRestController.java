@@ -1,6 +1,6 @@
 package es.uniovi.asw.publicacion;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,12 +18,32 @@ public class MainRestController {
 
 	@RequestMapping(value = "/elecciones",
 			method = RequestMethod.GET,
-			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
-			consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public ResponseEntity<List<Eleccion>> GetListOfElecciones() throws Exception {
-		System.out.println("/elecciones");
-		List<Eleccion> elecciones = (List<Eleccion>) Repository.eleccionRep.findAll();
-		return  new ResponseEntity<List<Eleccion>>(elecciones, HttpStatus.OK);
+			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+	public ResponseEntity<Eleccion[]> GetListOfElecciones() throws Exception {
+		
+		Iterable<Eleccion> elecciones = Repository.eleccionRep.findAll();
+		ArrayList<Eleccion> array = new ArrayList<Eleccion>();
+		for (Eleccion eleccion : elecciones) {
+			array.add(eleccion);
+		}
+		
+		// test
+		Eleccion e1 = new Eleccion();
+		e1.setNombre("Elecciones Generales España 2016");
+
+		Eleccion e2 = new Eleccion();
+		e2.setNombre("Elecciones Municipales 2015");
+		
+		Eleccion e3 = new Eleccion();
+		e3.setNombre("Elecciones Autonómicas 2014");
+		
+		array.add(e1);
+		array.add(e2);
+		array.add(e3);
+		
+		System.out.println("/elecciones (" + array.size() + ")");
+		
+		return  new ResponseEntity<Eleccion[]>(array.toArray(new Eleccion[1]), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/eleccion/{id}",
@@ -32,8 +52,14 @@ public class MainRestController {
 			consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<String> GetResultsOf(@PathVariable("id") String id) throws Exception {
 
-		
-
+	
+		return  new ResponseEntity<String>("{}", HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/test",
+			method = RequestMethod.GET)
+	public ResponseEntity<String> test() throws Exception {
+		System.out.println("/test");
 		return  new ResponseEntity<String>("{}", HttpStatus.OK);
 	}
 }

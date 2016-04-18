@@ -99,9 +99,11 @@
 	</footer>
 	
 	<script id="ListTpl" type="text/x-dot-template">
-		<h2>Here is the page using a header template</h2>
-		{{#def.header}}
-		{{=it.name}}
+		<div class="list-group">
+		{{~it :value:index}}
+			<a href="/eleccion/{{=value.id}}" class="list-group-item">{{=value.nombre}}</a>
+		{{~}}
+		</div>
 	</script>
 
 	<!-- <div id="loading"><h1>Cargando...</h1></div> -->
