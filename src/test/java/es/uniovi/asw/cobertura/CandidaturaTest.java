@@ -97,12 +97,30 @@ public class CandidaturaTest {
 	@Test
 	public void testHash() {
 		c=  new Candidatura("a", "b", "c", new Eleccion());
-		System.out.println(c.hashCode());
-		//assertEquals(961, c.hashCode());
+		assertEquals(924579, c.hashCode());
 		
 	}
 
-	
+	@Test
+	public void testEquals() {
+		Eleccion e= new Eleccion();
+		c=  new Candidatura("a", "b", "c", e);
+		Candidatura c2=  new Candidatura();
+		//Candidatura c3=  new Candidatura("a", "b", "c", null);
+		Candidatura c4=  new Candidatura(null, "b", "c", e);
+		Candidatura c5=  new Candidatura("otro", "b", "c", e);
+		assertTrue(c.equals(c));
+		assertFalse(c.equals(c2));
+		assertFalse(c.equals(e));
+		assertFalse(c.equals(null));
+		//assertFalse(c.equals(c3));
+		//assertFalse(c3.equals(c));
+		assertFalse(c.equals(c4));
+		assertFalse(c4.equals(c));
+		assertFalse(c.equals(c5));
+		assertFalse(c5.equals(c));
+	}
+
 
 	
 
