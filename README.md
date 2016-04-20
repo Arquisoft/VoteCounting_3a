@@ -12,6 +12,9 @@ Vote Counting
 [![Dependency Status](https://www.versioneye.com/user/projects/57155174fcd19a00415b1c2d/badge.svg?style=flat)](https://www.versioneye.com/user/projects/57155174fcd19a00415b1c2d)
 
 
+![codecov.io](https://codecov.io/github/Arquisoft/VoteCounting_3a/branch.svg?branch=master)
+
+
 # Authors
 * Amir Housein Tofigh Halati
 * Carlos Lopez de Juan
