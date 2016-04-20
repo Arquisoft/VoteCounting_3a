@@ -39,7 +39,7 @@ public class RepositoryConfiguration {
 		Repository.candidaturaRep = candidaturaRep;
 		if(candidaturaRep.count() == 0){
 			candidaturaRep.save(can1);
-			candidaturaRep.save(can2);
+			candidaturaRep.save(can2); 
 			candidaturaRep.save(can3);
 		}
 	}
