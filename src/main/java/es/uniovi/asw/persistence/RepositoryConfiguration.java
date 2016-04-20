@@ -34,7 +34,7 @@ public class RepositoryConfiguration {
 		Repository.votoRep = votoRep;
 		Repository.votoConfirmadoRep = votoConfirmadoRep;
 
-		insertarDatosEjemplo();
+		//insertarDatosEjemplo();
 	}
 
 	private void insertarDatosEjemplo() {
