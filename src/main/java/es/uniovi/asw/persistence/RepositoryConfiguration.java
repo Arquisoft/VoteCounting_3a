@@ -35,9 +35,9 @@ public class RepositoryConfiguration {
 	Eleccion e = new Eleccion("EleccionASW", new Date(), 
 			new Date(System.currentTimeMillis()+86400000), new Time(System.currentTimeMillis()), 
 			new Time(System.currentTimeMillis()+100000));
-	Candidatura can1 = new Candidatura("PP","Partido Popular","ti tiri tiririririi", e );
-	Candidatura can2 = new Candidatura("PSOE","Partido Socialista","zz", e );
-	Candidatura can3 = new Candidatura("Podemos","Partido de Podemos","Presidente con coleta", e );
+	Candidatura can1 = new Candidatura("Coca cola","Coca cola","Refresco carbonatado", e );
+	Candidatura can2 = new Candidatura("Fanta","Fanta","Refresco carbonatado sabor naranja o limon", e );
+	Candidatura can3 = new Candidatura("Nestea","Nestea","Bebida refrescante sin burbujas", e );
 	ColegioElectoral colegio1 = new ColegioElectoral("Colegio de Gijon", "Poblacion gijonesa", c1);
 	ColegioElectoral colegio2 = new ColegioElectoral("Colegio de Oviedo", "Poblacion ovetense", c2);
 	Voter v1 = new  Voter("Carlos", "email1@uniovi.es", "pass1", "7895176D");
