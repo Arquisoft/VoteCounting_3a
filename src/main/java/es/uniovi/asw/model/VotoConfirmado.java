@@ -22,6 +22,11 @@ public class VotoConfirmado {
 	
 	VotoConfirmado() {}
 	
+	public VotoConfirmado(Voter voter, Eleccion eleccion){
+		Asociacion.EleccionVotoConfirmado.link(eleccion, this);
+		Asociacion.VotanteVotoConfirmado.link(voter, this);
+	}
+	
 	public Voter getVotante() {
 		return votante;
 	}

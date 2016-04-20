@@ -29,6 +29,12 @@ public class ColegioElectoral {
 	
 	ColegioElectoral() {}
 	
+	public ColegioElectoral(String nombre, String poblacion, Circunscripcion c){
+		this.nombre = nombre;
+		this.poblacion = poblacion;
+		Asociacion.CircunscripcionColegio.link(c, this);
+	}
+	
 	public Set<Voto> getVotos() {
 		return votos;
 	}

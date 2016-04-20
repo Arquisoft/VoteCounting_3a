@@ -6,7 +6,7 @@ import java.util.TimerTask;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class CountingExecutor {
-	
+
 	private final static long TIME = 5 * 60 * 1000;
 
 	private static Map<CountSystem, Timer> timers = new ConcurrentHashMap<>();
@@ -20,7 +20,7 @@ public class CountingExecutor {
 
 	public static void unregister(CountSystem countSystem) {
 		Timer timer = timers.get(countSystem);
-		
+
 		if (timer != null) {
 			timer.cancel();
 		}
@@ -34,7 +34,7 @@ public class CountingExecutor {
 		}
 
 		public void run() {
-			// countSystem.calcular();
+			countSystem.calcular();
 		}
 	}
 
