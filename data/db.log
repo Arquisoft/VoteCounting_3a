@@ -1,4 +1,4 @@
-/*C331*/SET SCHEMA PUBLIC
+/*C21*/SET SCHEMA PUBLIC
 alter table candidatura drop constraint FK_tilbtj6j8teyacnkjt45f8y4j
 alter table circunscripcion drop constraint FK_qsvvomt2hjfha7h8of0idp6xw
 alter table colegio_electoral drop constraint FK_ohqbjqffqvk7vsnkyfc1y60rg
@@ -32,21 +32,21 @@ alter table voto add constraint FK_jwnfqyewn88y6x4t26htivo50 foreign key (opcion
 alter table voto_confirmado add constraint FK_skfwpa8jn6wyy4a7u4v4wr7c7 foreign key (eleccion) references eleccion
 alter table voto_confirmado add constraint FK_f9wiwynl36bt74ne833ae0bwo foreign key (votante) references voter
 DISCONNECT
-/*C330*/SET SCHEMA PUBLIC
+/*C20*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C329*/SET SCHEMA PUBLIC
+/*C19*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C328*/SET SCHEMA PUBLIC
+/*C18*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C327*/SET SCHEMA PUBLIC
+/*C17*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C326*/SET SCHEMA PUBLIC
+/*C16*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C325*/SET SCHEMA PUBLIC
+/*C15*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C324*/SET SCHEMA PUBLIC
+/*C14*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C323*/SET SCHEMA PUBLIC
+/*C13*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C322*/SET SCHEMA PUBLIC
+/*C12*/SET SCHEMA PUBLIC
 DISCONNECT
