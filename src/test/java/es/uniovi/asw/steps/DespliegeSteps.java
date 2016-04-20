@@ -48,7 +48,7 @@ public class DespliegeSteps {
 
 	@Entonces("^el cliente visualiza un mensaje de bienvenida$")
 	public void el_cliente_visualiza_un_mensaje_de_bienvenida() throws Throwable {
-		SeleniumUtils.esperaCargaPagina(driver, "text", "Elecciones - Sistema de retados", 10);
+		SeleniumUtils.esperaCargaPagina(driver, "text", "Elecciones - Sistema de resultados", 10);
 	}
 
 }
