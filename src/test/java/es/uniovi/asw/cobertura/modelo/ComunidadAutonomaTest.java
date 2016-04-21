@@ -1,7 +1,7 @@
 /**
  * 
  */
-package es.uniovi.asw.cobertura;
+package es.uniovi.asw.cobertura.modelo;
 
 import static org.junit.Assert.*;
 
