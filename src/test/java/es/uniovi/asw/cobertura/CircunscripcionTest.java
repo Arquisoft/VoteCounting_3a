@@ -33,12 +33,12 @@ import es.uniovi.asw.model.ComunidadAutonoma;
 @IntegrationTest({ "server.port=0" })
 public class CircunscripcionTest {
 	
-	Circunscripcion c2par = null;
-	Circunscripcion c1par = null;
-	String nombre1 = "n1";
-	String nombre2 = "n2";
-	ComunidadAutonoma comunidad1 = new ComunidadAutonoma("ca1");
-	ComunidadAutonoma comunidad2 = new ComunidadAutonoma("ca2");
+	private Circunscripcion c2par = null;
+	private Circunscripcion c1par = null;
+	private String nombre1 = "n1";
+	private String nombre2 = "n2";
+	private ComunidadAutonoma comunidad1 = new ComunidadAutonoma("ca1");
+	private ComunidadAutonoma comunidad2 = new ComunidadAutonoma("ca2");
 	
 
 	@Test

@@ -31,7 +31,7 @@ import es.uniovi.asw.model.Voto;
 @IntegrationTest({ "server.port=0" })
 public class CandidaturaTest {
 	
-	Candidatura c = null; 
+	private Candidatura c = null; 
 	
 
 	@Test
