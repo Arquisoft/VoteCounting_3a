@@ -10,27 +10,19 @@ public class VotoConfirmadokey implements Serializable{
 	
 	public VotoConfirmadokey  () {}
 	
-	/**
-	 * @return the votante
-	 */
+
 	public Long getVotante() {
 		return votante;
 	}
-	/**
-	 * @param votante the votante to set
-	 */
+
 	public void setVotante(Long votante) {
 		this.votante = votante;
 	}
-	/**
-	 * @return the eleccion
-	 */
+
 	public Long getEleccion() {
 		return eleccion;
 	}
-	/**
-	 * @param eleccion the eleccion to set
-	 */
+
 	public void setEleccion(Long eleccion) {
 		this.eleccion = eleccion;
 	}
