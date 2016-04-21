@@ -18,37 +18,18 @@ import es.uniovi.asw.SeleniumUtils;
 @IntegrationTest
 @WebAppConfiguration
 public class DespliegeSteps {
-	protected WebDriver driver;
-	protected String baseUrl;
-	protected boolean acceptNextAlert = true;
-	protected StringBuffer verificationErrors = new StringBuffer();
-
-	@Before
-	public void setUp() throws Exception {
-		driver = new FirefoxDriver();
-		baseUrl = "http://localhost:8080";
-	}
-
-	@After
-	public void tearDown() throws Exception {
-		driver.quit();
-		
-	}
-
-	@Autowired
-	protected WebApplicationContext context;
-
-	@Value("${local.server.port}")
-	protected int port;
-
+	
+	private WebDriver driver = SeleniumUtils.getDriver("Configuration");
+	
 	@Cuando("^el cliente entra en la web$")
 	public void el_cliente_entra_en_la_web() throws Throwable {
-		driver.get(baseUrl);
+		driver.get("http://localhost:8080");
 	}
 
 	@Entonces("^el cliente visualiza un mensaje de bienvenida$")
 	public void el_cliente_visualiza_un_mensaje_de_bienvenida() throws Throwable {
 		SeleniumUtils.esperaCargaPagina(driver, "text", "Elecciones - Sistema de resultados", 10);
+		SeleniumUtils.finishTest(driver);
 	}
 
 }
