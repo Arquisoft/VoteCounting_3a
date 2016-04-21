@@ -7,6 +7,26 @@ public class VotoConfirmadokey implements Serializable{
 	private static final long serialVersionUID = 1L;
 	Long votante;
 	Long eleccion;
+	
+	public VotoConfirmadokey  () {}
+	
+
+	public Long getVotante() {
+		return votante;
+	}
+
+	public void setVotante(Long votante) {
+		this.votante = votante;
+	}
+
+	public Long getEleccion() {
+		return eleccion;
+	}
+
+	public void setEleccion(Long eleccion) {
+		this.eleccion = eleccion;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

@@ -1,7 +1,7 @@
 /**
  * Un test del models y no trabajo para tripAdvisor ojo... este es otro models. 
  */
-package es.uniovi.asw.cobertura;
+package es.uniovi.asw.cobertura.modelo;
 
 import static org.junit.Assert.*;
 
@@ -31,7 +31,7 @@ import es.uniovi.asw.model.Voto;
 @IntegrationTest({ "server.port=0" })
 public class CandidaturaTest {
 	
-	Candidatura c = null; 
+	private Candidatura c = null; 
 	
 
 	@Test

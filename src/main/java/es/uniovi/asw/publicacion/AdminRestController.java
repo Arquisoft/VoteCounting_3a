@@ -1,17 +1,12 @@
 package es.uniovi.asw.publicacion;
 
-import javax.validation.Valid;
-
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import es.uniovi.asw.model.types.UserPassInitStop;
 import es.uniovi.asw.recuento.CountSystem;
 import es.uniovi.asw.recuento.CountSystemFactory;
 import es.uniovi.asw.recuento.CountingExecutor;
@@ -46,7 +41,7 @@ public class AdminRestController {
 
 		System.out.println("Recuento " + id + " terminado.");
 		
-		CountSystem countSystem = CountSystemFactory.newStdCountSystem(id);
+		//CountSystem countSystem = CountSystemFactory.newStdCountSystem(id);
 
 		// Hasta que se solucione problema de persistencia
 		CountingExecutor.stopAll();

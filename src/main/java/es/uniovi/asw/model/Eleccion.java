@@ -3,6 +3,7 @@ package es.uniovi.asw.model;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -37,7 +38,8 @@ public class Eleccion {
 	private List<Candidatura> opciones = new ArrayList<Candidatura>();
 	
 	@OneToMany(mappedBy = "eleccion")
-	private Set<VotoConfirmado> votantes;
+	//private Set<VotoConfirmado> votantes;
+	private Set<VotoConfirmado> votantes = new HashSet<VotoConfirmado>();
 	
 	public Eleccion(String nombre, Date inicio, Date fin, Time hInicio, Time hFin){
 		this.nombre = nombre;
