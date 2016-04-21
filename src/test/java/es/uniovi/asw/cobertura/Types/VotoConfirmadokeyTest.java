@@ -28,6 +28,20 @@ public class VotoConfirmadokeyTest {
 		vc.setVotante(2L);
 		assertEquals(994, vc.hashCode());
 	}
+	
+	@Test
+	public final void testSets() {
+		vc = new VotoConfirmadokey();
+	
+		Long l1=1L;
+		Long l2=2L;
+		vc.setEleccion(l1);
+		vc.setVotante(l2);
+		
+		assertEquals(l1, vc.getEleccion());
+		assertEquals(l2, vc.getVotante());
+
+	}
 
 	/**
 	 * Test method for {@link es.uniovi.asw.model.types.VotoConfirmadokey#equals(java.lang.Object)}.
