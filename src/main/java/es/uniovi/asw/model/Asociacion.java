@@ -6,8 +6,8 @@ public class Asociacion {
 	public static class ComunidadCircunscripcion {
 
 		public static void link(ComunidadAutonoma c, Circunscripcion cir) {
-			c.getCircunscripciones().add(cir);
 			cir.setComunidad(c);
+			c.getCircunscripciones().add(cir);
 		}
 
 		public static void unlink(ComunidadAutonoma c, Circunscripcion cir) {
@@ -19,8 +19,8 @@ public class Asociacion {
 	public static class CircunscripcionColegio {
 
 		public static void link(Circunscripcion cir, ColegioElectoral col) {
-			cir.getColegios().add(col);
 			col.setCircunscripcion(cir);
+			cir.getColegios().add(col);
 		}
 
 		public static void unlink(Circunscripcion cir, ColegioElectoral col) {
@@ -32,8 +32,8 @@ public class Asociacion {
 	public static class ColegioVoto {
 
 		public static void link(ColegioElectoral col, Voto voto) {
-			col.getVotos().add(voto);
 			voto.setColegio(col);
+			col.getVotos().add(voto);
 		}
 
 		public static void unlink(ColegioElectoral col, Voto voto) {
@@ -45,8 +45,8 @@ public class Asociacion {
 	public static class ColegioVotante {
 
 		public static void link(ColegioElectoral col, Voter votante) {
-			col.getVotantes().add(votante);
 			votante.setColegio(col);
+			col.getVotantes().add(votante);
 		}
 
 		public static void unlink(ColegioElectoral col, Voter votante) {
@@ -58,8 +58,8 @@ public class Asociacion {
 	public static class VotoOpcion {
 
 		public static void link(Voto voto, Candidatura opcion) {
-			opcion.getVotos().add(voto);
 			voto.setOpcion(opcion);
+			opcion.getVotos().add(voto);
 		}
 
 		public static void unlink(Voto voto, Candidatura opcion) {
@@ -71,8 +71,8 @@ public class Asociacion {
 	public static class EleccionOpcion {
 
 		public static void link(Eleccion e, Candidatura o) {
-			e.getOpciones().add(o);
 			o.setEleccion(e);
+			e.getOpciones().add(o);
 		}
 
 		public static void unlink(Eleccion e, Candidatura o) {
@@ -84,8 +84,8 @@ public class Asociacion {
 	public static class EleccionVotoConfirmado {
 
 		public static void link(Eleccion e, VotoConfirmado vc) {
-			e.getVotantes().add(vc);
 			vc.setEleccion(e);
+			e.getVotantes().add(vc);
 		}
 
 		public static void unlink(Eleccion e, VotoConfirmado vc) {
@@ -97,8 +97,8 @@ public class Asociacion {
 	public static class VotanteVotoConfirmado {
 
 		public static void link(Voter v, VotoConfirmado vc) {
-			v.getElecciones().add(vc);
 			vc.setVotante(v);
+			v.getElecciones().add(vc);
 		}
 
 		public static void unlink(Voter v, VotoConfirmado vc) {
@@ -106,5 +106,7 @@ public class Asociacion {
 			vc.setVotante(null);
 		}
 	}
+	
+
 
 }

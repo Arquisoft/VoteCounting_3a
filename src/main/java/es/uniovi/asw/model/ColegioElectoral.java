@@ -36,7 +36,7 @@ public class ColegioElectoral {
 	}
 	
 	public Set<Voto> getVotos() {
-		return votos;
+		return new HashSet<Voto>(votos);
 	}
 	
 	public void setVotos(Set<Voto> votos) {
@@ -44,7 +44,7 @@ public class ColegioElectoral {
 	}
 	
 	public Set<Voter> getVotantes() {
-		return votantes;
+		return new HashSet<Voter>(votantes);
 	}
 	
 	public void setVotantes(Set<Voter> votantes) {

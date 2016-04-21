@@ -34,7 +34,7 @@ public class RepositoryConfiguration {
 		Repository.votoRep = votoRep;
 		Repository.votoConfirmadoRep = votoConfirmadoRep;
 
-		//insertarDatosEjemplo();
+		insertarDatosEjemplo();
 	}
 
 	private void insertarDatosEjemplo() {
@@ -46,9 +46,12 @@ public class RepositoryConfiguration {
 		eleccion1 = Repository.eleccionRep.save(eleccion1);
 
 		// Opciones
-		Candidatura can1 = Repository.candidaturaRep.save(new Candidatura("Coca cola", "Coca cola", "Refresco carbonatado", eleccion1));
-		Candidatura can2 = Repository.candidaturaRep.save(new Candidatura("Fanta", "Fanta", "Refresco carbonatado sabor naranja o limon", eleccion1));
-		Candidatura can3 = Repository.candidaturaRep.save(new Candidatura("Nestea", "Nestea", "Bebida refrescante sin burbujas", eleccion1));
+		Candidatura can1 = Repository.candidaturaRep
+				.save(new Candidatura("Coca cola", "Coca cola", "Refresco carbonatado", eleccion1));
+		Candidatura can2 = Repository.candidaturaRep
+				.save(new Candidatura("Fanta", "Fanta", "Refresco carbonatado sabor naranja o limon", eleccion1));
+		Candidatura can3 = Repository.candidaturaRep
+				.save(new Candidatura("Nestea", "Nestea", "Bebida refrescante sin burbujas", eleccion1));
 
 		// Comunidades Autonomas
 		ComunidadAutonoma ca = Repository.comunidadRep.save(new ComunidadAutonoma("Asturias"));
@@ -60,8 +63,10 @@ public class RepositoryConfiguration {
 		Circunscripcion c4 = Repository.circunscripcionRep.save(new Circunscripcion("Mieres", ca));
 
 		// Colegios Electorales
-		ColegioElectoral colegio1 = Repository.colegioRep.save(new ColegioElectoral("Colegio de Gijon", "Poblacion gijonesa", c1));
-		ColegioElectoral colegio2 = Repository.colegioRep.save(new ColegioElectoral("Colegio de Oviedo", "Poblacion ovetense", c2));
+		ColegioElectoral colegio1 = Repository.colegioRep
+				.save(new ColegioElectoral("Colegio de Gijon", "Poblacion gijonesa", c1));
+		ColegioElectoral colegio2 = Repository.colegioRep
+				.save(new ColegioElectoral("Colegio de Oviedo", "Poblacion ovetense", c2));
 
 		// Votantes
 		Voter v1 = Repository.voterRep.save(new Voter("Carlos", "email1@uniovi.es", "pass1", "7895176D"));

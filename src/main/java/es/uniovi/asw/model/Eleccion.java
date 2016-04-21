@@ -3,6 +3,7 @@ package es.uniovi.asw.model;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -33,11 +34,11 @@ public class Eleccion {
 	private Integer numeroOpciones;
 	private boolean activa;
 
-	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.MERGE, fetch = FetchType.EAGER)
 	private List<Candidatura> opciones = new ArrayList<Candidatura>();
 	
-	@OneToMany(mappedBy = "eleccion")
-	private Set<VotoConfirmado> votantes;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "eleccion",cascade=CascadeType.MERGE)
+	private Set<VotoConfirmado> votantes = new HashSet<VotoConfirmado>();
 	
 	public Eleccion(String nombre, Date inicio, Date fin, Time hInicio, Time hFin){
 		this.nombre = nombre;
@@ -92,16 +93,18 @@ public class Eleccion {
 	}
 
 	public List<Candidatura> getOpciones() {
-		return opciones;
+		return new ArrayList<Candidatura>(opciones);
 	}
 
 	public void setOpciones(List<Candidatura> opciones) {
 		this.opciones = opciones;
 	}
 
+	
 	public Set<VotoConfirmado> getVotantes() {
 		return votantes;
 	}
+
 
 	public void setVotantes(Set<VotoConfirmado> votantes) {
 		this.votantes = votantes;

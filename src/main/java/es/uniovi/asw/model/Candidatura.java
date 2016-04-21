@@ -60,7 +60,7 @@ public class Candidatura {
 	}
 
 	public Set<Voto> getVotos() {
-		return votos;
+		return new HashSet<Voto>(votos);
 	}
 
 	public void setVotos(Set<Voto> votos) {
