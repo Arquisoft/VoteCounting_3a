@@ -50,4 +50,43 @@ public class VotoConfirmado {
 	public String toString() {
 		return "VotoConfirmado [votante=" + votante + ", eleccion=" + eleccion + ", haVotado=" + haVotado + "]";
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((eleccion == null) ? 0 : eleccion.hashCode());
+		result = prime * result + ((votante == null) ? 0 : votante.hashCode());
+		return result;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		VotoConfirmado other = (VotoConfirmado) obj;
+		if (eleccion == null) {
+			if (other.eleccion != null)
+				return false;
+		} else if (!eleccion.equals(other.eleccion))
+			return false;
+		if (votante == null) {
+			if (other.votante != null)
+				return false;
+		} else if (!votante.equals(other.votante))
+			return false;
+		return true;
+	}
+	
+	
 }
