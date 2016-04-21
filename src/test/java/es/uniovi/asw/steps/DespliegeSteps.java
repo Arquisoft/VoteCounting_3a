@@ -24,10 +24,13 @@ public class DespliegeSteps {
 	@Cuando("^el cliente entra en la web$")
 	public void el_cliente_entra_en_la_web() throws Throwable {
 		driver.get("http://localhost:8080");
+		SeleniumUtils.finishTest(driver);
 	}
 
 	@Entonces("^el cliente visualiza un mensaje de bienvenida$")
 	public void el_cliente_visualiza_un_mensaje_de_bienvenida() throws Throwable {
+		driver = SeleniumUtils.getDriver("Configuration");
+		driver.get("http://localhost:8080");
 		SeleniumUtils.esperaCargaPagina(driver, "text", "Elecciones - Sistema de resultados", 10);
 		SeleniumUtils.finishTest(driver);
 	}
