@@ -14,6 +14,27 @@ $(document).ready(function() {
 
 	page();
 
+	// Botones Admin
+	$("#iniciarRecuento").on("click", function() {
+		$.ajax({
+			url : "/iniciarRecuento/" + $("#idEleccion").val()
+		}).then(function(data) {
+			addAlert("Recuento iniciado.", "success");
+		});
+	});
+
+	$("#terminarRecuento").on("click", function() {
+		$.ajax({
+			url : "/terminarRecuento/" + $("#idEleccion").val()
+		}).then(function(data) {
+			addAlert("Recuento terminado.", "success");
+		});
+	});
+
+	$('#adminForm').on('submit', function(e) {
+		e.preventDefault();
+	});
+
 });
 
 /* Activa los enlaces del NAV con determinado href */
@@ -54,7 +75,22 @@ var eleccion = function(arg) {
 	console.log(arg);
 	navTo("nanannana", "eleccion");
 
-	InitChart();
+	InitChart([ {
+		'x' : "Pepsi",
+		'y' : 10
+	}, {
+		'x' : "Cocacola",
+		'y' : 40
+	}, {
+		'x' : "Fanta",
+		'y' : 30
+	}, {
+		'x' : "Sprite",
+		'y' : 5
+	}, {
+		'x' : "Nestea",
+		'y' : 15
+	} ]);
 }
 
 var notfound = function() {
@@ -136,27 +172,7 @@ function addAlert(message, level) {
 							+ '&times;</button>' + message + '</div>');
 }
 
-function InitChart() {
-
-	var barData = [ {
-		'x' : 1,
-		'y' : 5
-	}, {
-		'x' : 20,
-		'y' : 20
-	}, {
-		'x' : 40,
-		'y' : 10
-	}, {
-		'x' : 60,
-		'y' : 40
-	}, {
-		'x' : 80,
-		'y' : 5
-	}, {
-		'x' : 100,
-		'y' : 60
-	} ];
+function InitChart(barData) {
 
 	var vis = d3.select('#ChartResultadosEleccion'), WIDTH = 1000, HEIGHT = 500, MARGINS = {
 		top : 20,
@@ -193,7 +209,7 @@ function InitChart() {
 	}).attr('width', xRange.rangeBand()).attr('height', function(d) {
 		return ((HEIGHT - MARGINS.bottom) - yRange(d.y));
 	}).attr('fill', function() {
-		return "#" + Math.floor(Math.random() * 16777215).toString(16)
+		return randomColor();
 	}).on('mouseover', function(d) {
 		d3.select(this).attr("style", "outline: thin solid black;");
 	}).on('mouseout', function(d) {
