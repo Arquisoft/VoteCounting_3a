@@ -1,17 +1,11 @@
 package es.uniovi.asw.persistence;
 
-import java.sql.Time;
-import java.util.Date;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
-import es.uniovi.asw.model.*;
 
 @Configuration
 @EnableAutoConfiguration
@@ -36,7 +30,7 @@ public class RepositoryConfiguration {
 
 		//insertarDatosEjemplo();
 	}
-
+/*
 	private void insertarDatosEjemplo() {
 
 		// Eleccion
@@ -76,5 +70,5 @@ public class RepositoryConfiguration {
 		VotoConfirmado vc = Repository.votoConfirmadoRep.save(new VotoConfirmado(v1, eleccion1));
 
 	}
-
+*/
 }
