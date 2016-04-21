@@ -91,8 +91,8 @@ public class EleccionTest {
 	 */
 	@Test
 	public final void testToString() {
-		e= new Eleccion(nombre , null, null, t1, t2);		
-		String s ="Eleccion [id=null, nombre=a, fechaInicio=null, fechaFin=null, horaInicio=01:00:00, horaFin=19:57:31, opciones=[]]";
+		e= new Eleccion(nombre , null, null, null, null);		
+		String s ="Eleccion [id=null, nombre=a, fechaInicio=null, fechaFin=null, horaInicio=null, horaFin=null, opciones=[]]";
 		assertEquals(s, e.toString());
 	}
 
@@ -112,6 +112,8 @@ public class EleccionTest {
 		assertTrue(e1.equals(e3));
 
 		assertFalse(e.equals(new Object()));
+		assertFalse(e.equals("otraClase"));
+		
 		assertFalse(e.equals(e1));
 		assertFalse(e1.equals(e));
 		assertFalse(e1.equals(e2));
@@ -119,7 +121,7 @@ public class EleccionTest {
 		e3.setNombre(null);
 		assertFalse(e1.equals(e3));
 		assertFalse(e3.equals(e1));
- 
+
 		
 	}
 
