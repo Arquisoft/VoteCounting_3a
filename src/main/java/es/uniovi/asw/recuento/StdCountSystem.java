@@ -74,6 +74,12 @@ public class StdCountSystem implements CountSystem {
 	public void calcular() {
 		Eleccion e = Repository.eleccionRep.findById(id);
 
+		if (e == null)
+		{
+			System.out.println("Calculos realizados");
+			return;
+		}
+		
 		for (Candidatura cand : e.getOpciones()) {
 			votos.put(cand.getNombre(), new Integer(cand.getVotos().size()).longValue());
 
