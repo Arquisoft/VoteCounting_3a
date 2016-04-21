@@ -50,7 +50,7 @@ public class EleccionTest {
 		assertNull(e.getNumeroOpciones());
 		assertNotNull(e.getOpciones());
 		assertEquals(0, e.getOpciones().size());
-		assertEquals(0, e.getVotantes().size());
+		assertNull(e.getVotantes());
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class EleccionTest {
 		assertNull(e.getNumeroOpciones());
 		assertNotNull(e.getOpciones());
 		assertEquals(0, e.getOpciones().size());
-		assertEquals(0, e.getVotantes().size());
+		assertNull( e.getVotantes());
 
 
 	}
@@ -82,7 +82,7 @@ public class EleccionTest {
 		assertNull(e.getNumeroOpciones());
 		assertNotNull(e.getOpciones());
 		assertEquals(0, e.getOpciones().size());
-		assertEquals(0, e.getVotantes().size());
+		assertNull(e.getVotantes());
 
 	}
 
