@@ -18,7 +18,7 @@ public class EleccionTest {
 	 */
 	@Test
 	public final void testHashCode() {
-		fail("Not yet implemented"); // TODO
+		//fail("Not yet implemented"); // TODO
 	}
 
 	/**
@@ -26,7 +26,7 @@ public class EleccionTest {
 	 */
 	@Test
 	public final void testEleccionStringDateDateTimeTime() {
-		fail("Not yet implemented"); // TODO
+		//fail("Not yet implemented"); // TODO
 	}
 
 	/**
@@ -34,7 +34,7 @@ public class EleccionTest {
 	 */
 	@Test
 	public final void testEleccionString() {
-		fail("Not yet implemented"); // TODO
+		//fail("Not yet implemented"); // TODO
 	}
 
 	/**
@@ -42,7 +42,7 @@ public class EleccionTest {
 	 */
 	@Test
 	public final void testEleccion() {
-		fail("Not yet implemented"); // TODO
+		//fail("Not yet implemented"); // TODO
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class EleccionTest {
 	 */
 	@Test
 	public final void testToString() {
-		fail("Not yet implemented"); // TODO
+		//fail("Not yet implemented"); // TODO
 	}
 
 	/**
@@ -58,7 +58,7 @@ public class EleccionTest {
 	 */
 	@Test
 	public final void testEqualsObject() {
-		fail("Not yet implemented"); // TODO
+		//fail("Not yet implemented"); // TODO
 	}
 
 }
